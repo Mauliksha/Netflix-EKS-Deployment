@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: netflix-app
+spec:
+  containers:
+  - name: netflix-server
+    image: maulikshah951995875/netflix_clone_repo:v1
+    ports:
+    - containerPort: 80

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: netflix-app-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: netflix-app
+  template:
+    metadata:
+      labels:
+        app: netflix-app
+    spec:
+      containers:
+      - name: netflix-server
+        image: maulikshah951995875/netflix_clone_repo:v1
+        ports:
+        - containerPort: 80
